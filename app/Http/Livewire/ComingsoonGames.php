@@ -38,7 +38,8 @@ class ComingsoonGames extends Component
         return collect($games)->map(function($game){
             return collect($game)->merge([
                 'coverImageUrl'     => isset($game['cover']) ? Str::replaceFirst('thumb', 'cover_small', $game['cover']['url']) : '//via.placeholder.com/90x120', 
-                'firstReleaseDate'  => Carbon::parse($game['first_release_date'])->format('M d, Y') 
+                // 'firstReleaseDate'  => Carbon::parse($game['first_release_date'])->format('M d, Y') 
+                'firstReleaseDate'  => '' 
             ]);
         });
     }
